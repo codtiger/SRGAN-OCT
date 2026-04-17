@@ -1,0 +1,22 @@
+# Model definition
+MODEL:
+  EMA:
+    ENABLE: True
+    DECAY: 0.999
+    COMPILED: True
+  G:
+    NAME: srresnet_x4
+    IN_CHANNELS: 3
+    OUT_CHANNELS: 3
+    CHANNELS: 64
+    NUM_RCB: 16
+    COMPILED: True
+  PATH: "results/SRResNet_x4-OCT/g_best.pth.tar"
+
+DATASET:
+  PATH: "../Srinivasan/"
+
+OUTPUT_DIR: "imagegen_output/"
+DEVICE: "cuda:1"
+# CLASS_NAMES: [ "CNV", "DME", "DRUSEN", "NORMAL" ]
+CLASSES: ["DME", "DRUSEN", "NORMAL" ]
